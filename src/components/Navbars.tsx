@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import logo from "@/assets/asset 0.png";
+import { ChevronDown, ChevronUp, Menu, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 interface NavItem {
