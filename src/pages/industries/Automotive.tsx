@@ -3,7 +3,7 @@ import ServicesSection from "@/components/ServicesSection"
 
 function Automotive() {
   return (
-    <div>
+    <div className="pt-10">
       <div>
       <div>
       <p>nmncneunucnunvun</p>

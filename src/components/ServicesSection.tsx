@@ -1,6 +1,6 @@
-import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Code2, Beaker, Search, Scale, Users2, LineChart } from 'lucide-react'
+import { Card, CardContent } from "@/components/ui/card"
+import { Beaker, Code2, LineChart, Scale, Search, Users2 } from 'lucide-react'
 
 export default function ServicesSection() {
   const services = [
