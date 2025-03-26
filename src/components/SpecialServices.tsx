@@ -1,8 +1,6 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 import { Beaker, Code2, LineChart, Scale, Search, Users2 } from 'lucide-react'
 
-export default function ServicesSection() {
+export default function SpecialSevices() {
   const services = [
     {
       title: "Business Consultancy",
@@ -43,7 +41,7 @@ export default function ServicesSection() {
   ]
 
   return (
-    <section className="py-16 px-4 md:px-6">
+    <section className=" py-16 px-4 md:px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl  font-normal mb-4 text-[#1e1b4b]">Our special services</h2>
@@ -53,7 +51,35 @@ export default function ServicesSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex flex-wrap justify-between gap-6">
+          
+           {services.map((items)=>(
+            <div className="flex items-start bg-white shadow-lg rounded-lg p-4 w-full md:w-[48%]" >
+              <div className='flex items-center justify-center w-12 h-12 rounded-full m-5'>
+                {items.icon}
+
+              </div>
+              <div>
+                <h3 className='text-lg font-semibold'>{items.title}</h3>
+                <p className='text-gray-600 text-sm'>{items.description}</p>
+
+              </div>
+
+
+            </div>
+
+
+           ))}
+
+
+
+          
+
+
+
+        </div>
+
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <Card key={index} className="border-none shadow-sm">
               <CardContent className="p-6">
@@ -65,13 +91,13 @@ export default function ServicesSection() {
               </CardContent>
             </Card>
           ))}
-        </div>
+        </div> */}
 
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <Button className="bg-emerald-500 hover:bg-emerald-600 text-white">
             See Our All Services →
           </Button>
-        </div>
+        </div> */}
       </div>
     </section>
   )

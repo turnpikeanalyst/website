@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import logo from "@/assets/asset 0.png";
+import { ChevronDown, ChevronUp, Menu, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 interface NavItem {
@@ -135,7 +135,11 @@ const Navbar = () => {
       <div 
         className="relative group"
         onMouseEnter={() => setActiveDropdown(section)}
-        onMouseLeave={() => setActiveDropdown(null)}
+        onMouseLeave={() => {
+          setTimeout(()=>{
+            setActiveDropdown(null);
+          }, 800);
+        }}
       >
         <button className="flex items-center space-x-1 text-white hover:text-blue-400 transition-colors duration-300">
           <span style={{ fontFamily: 'ABeeZee, sans-serif', fontSize: '10px', lineHeight: '27px', letterSpacing: 'normal' }}>
