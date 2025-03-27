@@ -27,6 +27,7 @@ import Utilities from "./pages/industries/Utilities";
 import Services from "./pages/Services";
 import SoftwareSupport from "./pages/SoftwareSupport";
 import TrainingCourses from "./pages/TrainingCourses";
+import MedicalDevices from "./pages/industries/Medicaldevices";
 
 
 
@@ -67,6 +68,7 @@ function Routing() {
     <Route path="//industries/transportation" element={<TransportationAndServices/>}/>
     <Route path="//industries/utilities" element={<Utilities/>}/>
     <Route path="//industries/semiconductors" element={<Semiconductor/>}/>
+    <Route path="//industries/medical-devices" element={<MedicalDevices/>}/>
 
 
 

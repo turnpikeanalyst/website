@@ -1,41 +1,49 @@
-// import React from 'react'
 import ContactForm from "@/components/ContactForm";
 import SpecialServices from "@/components/SpecialServices";
 
-// import ServicesSection from "@/components/ServicesSection"
-
 function AerospaceDefence() {
   return (
-    <div className="">
-      <div className="flex justify-between mt-10 pt-10 sm:w-1/5">
-      <div className="bg  flex flex-col items-center justify-center ">
-        <h4 className="text-white font-bold text-4xl ">Aerospace & Defense
-        </h4>
-        <p className="text-white text-lg">
-        TurnPikeAnalyst has experienced resources to work on your Aerospace and Defense sector.
-         We would take care of employees back ground check to work on that sector.
+    <div className="container mx-auto px-32 py-5">
+      <div className="grid md:grid-cols-2  mt-10 pt-10">
+        {/* Left Column - Background Image with Text */}
+        <div
+          className="relative min-h-[500px] flex flex-col justify-center p-6 bg-cover bg-center text-white rounded-lg overflow-hidden"
+          style={{
+            backgroundImage: `url('/terence-burke-ianPiLGoZBM-unsplash.jpg')`,
+          }}
+        >
+          <div className="absolute inset-0 bg-black/50 z-0"></div>
+          <div className="relative z-10 max-w-xl">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              Aerospace & Defense
+            </h2>
+            <p className="text-lg text-gray-100">
+              TurnPikeAnalyst has experienced resources to work on your
+              Aerospace and Defense sector. We would take care of employees'
+              background checks to work in that sector.
+            </p>
+          </div>
+        </div>
 
-
-        </p>
-
+        {/* Right Column - Contact Form */}
+        {/* <div className="flex items-center justify-center">
+          <div className="w-full max-w-md">
+            <div className="bg-white p-8 shadow-lg rounded-lg">
+              <ContactForm />
+            </div>
+          </div>
+        </div> */}
+        <div className="flex items-center justify-center">
+          <ContactForm />
+        </div>
       </div>
-      <div className="px-56 py-11 bg-blue-600"> 
-      <div className=" bg-white p-5 py-6 px-7">
-        <ContactForm/>
-       </div> 
+
+      {/* Special Services Section */}
+      <div className="mt-16">
+        <SpecialServices />
       </div>
-      </div>
-
-      <div>
-        <SpecialServices/>
-        
-      </div> 
-
-      
-
-
     </div>
-  )
+  );
 }
 
-export default AerospaceDefence
+export default AerospaceDefence;

@@ -1,87 +1,78 @@
-import ContactForm from "@/components/ContactForm"
-import SpecialSevices from "@/components/SpecialServices"
+import ContactForm from "@/components/ContactForm";
+import SpecialSevices from "@/components/SpecialServices";
 
 function Oilandgas() {
   return (
-    <div>
-      
-      <div className="flex justify-between mt-10 pt-10">
-      <div className="Oil flex flex-col  justify-center ">
-        <h4 className="text-white font-semibold text-4xl ml-5 ">Oil & Gas
-
-
-        </h4>
-        <p className="text-white text-lg ml-5 mt-5">
-        A small river named Duden flows by their place and supplies it with the necessary 
-        regelialia. It is a paradise
-
-
-
-
-
-        </p>
-
-      </div>
-      <div className="px-56 py-11 bg-blue-600">
-      <div className=" bg-white p-5 py-6 px-7">
-        <ContactForm/>
-       </div> 
-      </div>
-      </div>
-
-      <div className=" px-60 py-10">
-        <p className="font-semibold text-4xl  "> Our Expertise
-        </p>
-        <div className="gap-4 text-gray-600">
-        <p className="mb-5 mt-4">
-        Turnpyke delivers customized solutions to help energy firms master industry obstacles and exploit emerging possibilities in the dynamic oil and gas
-         market. To help businesses thrive in the face of market uncertainty, technological upheaval, and economic change, we provide cutting-edge oil and gas 
-         industry solutions. We enable energy firms to transform their operations and adapt to the shifting sector by liberating data, leveraging innovation, and 
-         unleashing new business models.
-
-
-
-
-
-        </p >
-        <p className="mb-5">
-        Digital transformations, data integration, and the adoption of cloud platforms and cloud-native capabilities are areas of expertise for our team of
-         business and IT professionals. Business value is delivered more quickly, operations are streamlined, efficiency is increased, productivity is boosted, and
-          dependability is increased all thanks to agile product and service models. Turnpyke helps energy companies stay competitive and resilient by 
-          consolidating data, gleaning actionable insights, and overseeing intricate technology environments.
-
-
-
-
-
-
-        </p >
-        <p className="mb-5">
-        Our oil and gas consulting services help to streamline operations, improve customer service, and create a more sustainable future. Our all-
-        encompassing oil and gas IT solutions can help your business overcome the problems you face and embrace the chances you have for growth and
-         success in this dynamic industry. Turnpyke is dedicated to assisting the energy industry’s digital transition and ensuring its clients’ success in the face of
-          constant change.
-
-
-
-
-
-        </p>
-       
-        
+    <div className="container mx-auto px-32 py-5">
+      {/* Hero Section */}
+      <div className="grid md:grid-cols-2 gap-8 mt-10 pt-10">
+        <div
+          className="relative min-h-[500px] flex flex-col justify-center p-6 bg-cover bg-center text-white rounded-lg overflow-hidden"
+          style={{
+            backgroundImage: `url('/closeup-view-cylindrical-grinder-industrial-concept.jpg')`, // Replace with actual image path
+          }}
+        >
+          <div className="absolute inset-0 bg-black/50 z-0"></div>
+          <div className="relative z-10 max-w-xl">
+            <h4 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              Oil & Gas
+            </h4>
+            <p className="text-lg text-gray-100">
+              TurnPikeAnalyst supports oil and gas companies with IT
+              infrastructure, software upgrades, migrations, and managed
+              services to optimize operations and drive sustainability.
+            </p>
+          </div>
         </div>
-        
+        <div className="flex items-center justify-center">
+          <ContactForm />
+        </div>
       </div>
 
+      {/* Expertise Section */}
+      <div className="mt-16">
+        <p className="font-semibold text-4xl text-gray-900">Our Expertise</p>
+        <div className="gap-4 text-gray-700 leading-relaxed">
+          <p className="mb-5 mt-4">
+            TurnPikeAnalyst provides tailored solutions that help energy firms
+            navigate industry challenges and seize new opportunities. By
+            leveraging data, embracing innovation, and adopting modern business
+            models, we enable energy companies to transform operations and stay
+            resilient in a shifting market.
+          </p>
+          <p className="mb-5">
+            Our team specializes in digital transformation, data integration,
+            and cloud-native capabilities. We implement agile product and
+            service models that enhance efficiency, boost productivity, and
+            improve operational reliability.
+          </p>
+          <p className="mb-5">
+            By consolidating data, extracting actionable insights, and managing
+            complex technology environments, we help energy companies optimize
+            operations, improve customer service, and drive sustainability.
+          </p>
+          <p className="mb-5">
+            Utilizing advanced analytics, IoT, and automation, we optimize oil
+            and gas exploration, production, and distribution. Our solutions
+            enhance safety, reduce downtime, and ensure regulatory compliance,
+            driving operational excellence.
+          </p>
+          <p>
+            Our comprehensive oil and gas IT solutions help businesses overcome
+            industry challenges while embracing new opportunities.
+            TurnPikeAnalyst remains committed to supporting the energy sector’s
+            digital transformation and ensuring success in an evolving
+            landscape.
+          </p>
+        </div>
+      </div>
 
-
-
-      <div>
-        <SpecialSevices/>
-        
-      </div> 
+      {/* Services Section */}
+      <div className="mt-16">
+        <SpecialSevices />
+      </div>
     </div>
-  )
+  );
 }
 
-export default Oilandgas
+export default Oilandgas;

@@ -28,7 +28,7 @@ export default function SoftwareSupport() {
   };
 
   return (
-    <div className="min-h-screen bg-[#010b1a]">
+    <div className="min-h-screen bg-[#010b1a] pt-24 md:pt-28">
       <div className="container mx-auto px-8 py-16">
         <div className="max-w-4xl mx-auto">
           {/* Header Section */}

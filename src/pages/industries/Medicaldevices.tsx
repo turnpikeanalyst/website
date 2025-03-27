@@ -1,107 +1,79 @@
-import ContactForm from '@/components/ContactForm'
-import SpecialSevices from '@/components/SpecialServices'
+import ContactForm from "@/components/ContactForm";
+import SpecialSevices from "@/components/SpecialServices";
 
-function Medicaldevices() {
+function MedicalDevices() {
   return (
-    <div>
-       <div className="flex justify-between mt-10 pt-10">
-      <div className="MediaInfo flex flex-col  justify-center ">
-        <h4 className="text-white font-semibold text-4xl ml-5 ">
-        Medical Devices
-
-
-
-        </h4>
-        <p className="text-white text-lg ml-5 mt-5">
-        TurnPikeAnalyst works with medicine and medical and pharma companies to manage their
-         infra as well as end to end software installations, upgrade, migration with managed 
-         services
-
-
-
-
-
-
-        </p>
-
-      </div>
-      <div className="px-56 py-11 bg-blue-600">
-      <div className=" bg-white p-5 py-6 px-7">
-        <ContactForm/>
-       </div> 
-      </div>
-      </div>
-
-      <div className=" px-60 py-10">
-        <p className="font-semibold text-4xl  "> Our Expertise
-        </p>
-        <div className="gap-4 text-gray-600">
-        <p className="mb-5 mt-4">
-        Turnpyke is an industry leader in medical device technology, where we focus on fostering innovation and adding value. The healthcare business presents
-         its own set of issues and opportunities, and we’re dedicated to assisting our clients in meeting those challenges and seizing those chances through the
-          creation of innovative medical devices that improve patient care and increase patient convenience.
-
-
-
-
-
-
-
-        </p >
-        <p className="mb-5">
-        We make healthcare easier for everyone involved by incorporating cutting-edge technologies into medical products. Real-time monitoring, remote 
-        consultations, and individualized care are all made possible by the seamless connection, data collecting, and analysis enabled by our linked devices.
-         This boosts patient outcomes and makes healthcare more accessible and convenient.
-
-
-
-
-
-
-
-
-        </p >
-        <p className="mb-5">
-        Turnpyke understands the significance of following all applicable regulations in the medical device sector. Our services are tailored to conform to strict 
-        regulatory standards, giving our customers faith in releasing new and innovative medical devices without compromising on quality or safety.
-
-
-
-
-        </p>
-        <p className="mb-5">
-        Working with Turnpyke gives you access to our in-depth knowledge of medical device technology and our dedication to providing cutting-edge answers
-         to your problems. We partner with our customers to identify their unique needs and problems, and then use our knowledge and experience to provide 
-         value and facilitate ease of use through cutting-edge medical device technology.
-
-
-
-
-
-        </p>
-
-        <p className="">
-        The healthcare system can be revolutionized, patient outcomes can be enhanced, and caregivers can be given access to cutting-edge resources if we 
-        work together to develop next-generation medical equipment.
-
-
-
-        </p>
-        
+    <div className="container mx-auto px-32 py-5">
+      {/* Hero Section */}
+      <div className="grid md:grid-cols-2 mt-10 pt-10">
+        <div
+          className="relative min-h-[500px] flex flex-col justify-center p-6 bg-cover bg-center text-white rounded-lg overflow-hidden"
+          style={{
+            backgroundImage: `url(/smart-agriculture-iot-with-hand-planting-tree-background.jpg)`, // Replace with actual image path
+          }}
+        >
+          <div className="absolute inset-0 bg-black/50 z-0"></div>
+          <div className="relative z-10 max-w-xl">
+            <h4 className="text-3xl md:text-4xl font-bold mb-4 text-white">
+              Medical Devices
+            </h4>
+            <p className="text-lg text-gray-100">
+              TurnPikeAnalyst partners with medical and pharmaceutical companies
+              to manage their infrastructure, software installations, upgrades,
+              and migrations with managed services.
+            </p>
+          </div>
         </div>
-        
+        <div className="flex items-center justify-center">
+          <ContactForm />
+        </div>
       </div>
 
+      {/* Expertise Section */}
+      <div className="mt-16">
+        <p className="font-semibold text-4xl text-gray-900">Our Expertise</p>
+        <div className="gap-4 text-gray-700 leading-relaxed">
+          <p className="mb-5 mt-4">
+            TurnPikeAnalyst is an industry leader in medical device technology,
+            focusing on fostering innovation and delivering value. The
+            healthcare industry presents unique challenges, and we assist our
+            clients in overcoming them by developing innovative medical devices
+            that enhance patient care and convenience.
+          </p>
+          <p className="mb-5">
+            We simplify healthcare by integrating cutting-edge technologies into
+            medical products. Our smart medical devices enable real-time
+            monitoring, remote consultations, and personalized care through
+            seamless connectivity, data collection, and AI-driven analysis,
+            improving patient outcomes and making healthcare more accessible.
+          </p>
+          <p className="mb-5">
+            Regulatory compliance is critical in the medical device sector.
+            TurnPikeAnalyst ensures that all our solutions adhere to strict
+            industry regulations, allowing businesses to confidently introduce
+            new medical devices while maintaining the highest standards of
+            quality and safety.
+          </p>
+          <p className="mb-5">
+            By partnering with TurnPike, companies gain access to our expertise
+            in medical device technology and our commitment to delivering
+            cutting-edge solutions. We collaborate closely with clients to
+            identify challenges and provide innovative, user-friendly medical
+            technology solutions.
+          </p>
+          <p>
+            Together, we can revolutionize healthcare, improve patient outcomes,
+            and empower caregivers with next-generation medical devices.
+          </p>
+        </div>
+      </div>
 
-
-
-      <div>
-        <SpecialSevices/>
-        
-      </div> 
-
+      {/* Services Section */}
+      <div className="mt-16">
+        <SpecialSevices />
+      </div>
     </div>
-  )
+  );
 }
 
-export default Medicaldevices
+export default MedicalDevices;
