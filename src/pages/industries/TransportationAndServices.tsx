@@ -17,10 +17,10 @@ function TransportationAndServices() {
               Transportation & Services
             </h4>
             <p className="text-lg text-gray-100">
-              Turnpike has strong presence in transportation services. Turnpike
-              manages software required for building the tools, machine parts
-              for auto companies, manages their ERP, raw materials to sales
-              completion of a truck or auto
+              TurnPikeAnalyst has strong presence in transportation services.
+              TurnPikeAnalyst manages software required for building the tools,
+              machine parts for auto companies, manages their ERP, raw materials
+              to sales completion of a truck or auto
             </p>
           </div>
         </div>

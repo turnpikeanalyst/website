@@ -55,11 +55,11 @@ function MedicalDevices() {
             quality and safety.
           </p>
           <p className="mb-5">
-            By partnering with TurnPike, companies gain access to our expertise
-            in medical device technology and our commitment to delivering
-            cutting-edge solutions. We collaborate closely with clients to
-            identify challenges and provide innovative, user-friendly medical
-            technology solutions.
+            By partnering with TurnPikeAnalyst, companies gain access to our
+            expertise in medical device technology and our commitment to
+            delivering cutting-edge solutions. We collaborate closely with
+            clients to identify challenges and provide innovative, user-friendly
+            medical technology solutions.
           </p>
           <p>
             Together, we can revolutionize healthcare, improve patient outcomes,

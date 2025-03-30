@@ -17,7 +17,7 @@ function PlatformandSoftware() {
               Platforms & Software Products
             </h4>
             <p className="text-lg text-gray-100">
-              Turnpikeanalyst support all platform and software, reach us for
+              TurnPikeAnalyst support all platform and software, reach us for
               more detail.
             </p>
           </div>

@@ -17,8 +17,8 @@ function Retail() {
               Retail
             </h4>
             <p className="text-lg text-gray-100">
-              Turnpike is also into retails customers system maintenance and
-              enhancement projects
+              TurnPikeAnalyst is also into retails customers system maintenance
+              and enhancement projects
             </p>
           </div>
         </div>

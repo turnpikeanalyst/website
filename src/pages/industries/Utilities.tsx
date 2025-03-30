@@ -17,8 +17,9 @@ function Utilities() {
               Utilities
             </h4>
             <p className="text-lg text-gray-100">
-              Turnpike has strong presence in Utility industry starting from the
-              whole infra management till automation to some critical processes
+              TurnPikeAnalyst has strong presence in Utility industry starting
+              from the whole infra management till automation to some critical
+              processes
             </p>
           </div>
         </div>

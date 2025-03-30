@@ -18,7 +18,8 @@ function Semiconductor() {
             </h4>
             <p className="text-lg text-gray-100">
               Semiconductor is the core of today;s chip based technology,
-              TurnPike manages software for couple of core tech based companies
+              TurnPikeAnalyst manages software for couple of core tech based
+              companies
             </p>
           </div>
         </div>
