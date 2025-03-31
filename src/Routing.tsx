@@ -1,6 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import Blog from "./pages/Blog";
 import ContactUs from "./pages/ContactUs";
+import Career from "./pages/contactUs/Career";
+import Client from "./pages/contactUs/Client";
+import Faq from "./pages/contactUs/Faq";
 import DigitalContentServices from "./pages/DigitalContentServices";
 import Home from "./pages/Home";
 import AerospaceDefence from "./pages/industries/AerospaceDefence";
@@ -46,28 +49,30 @@ function Routing() {
     <Route path="/contact-us" element={<ContactUs />} />
     <Route path="/digital-content-services" element={<DigitalContentServices />} />
     <Route path="/software-support" element={<SoftwareSupport />} />
-    <Route path="//industries/aerospace-defense" element = {<AerospaceDefence/>}/>
-    <Route path="//industries/banking" element = {<Banking/>}/>
-    <Route path="//industries/communications" element = {<Communications/>}/>
-    <Route path="//industries/cpg" element = {<ConsumerPackageGoods/>}/>
-    <Route path="//industries/education" element = {<Education/>}/>
-    <Route path="//industries/manufacturing" element = {<IndustriesAndProcess/>}/>
-    <Route path="//industries/insurance" element = {<Insurance/>}/>
-    <Route path="//industries/life-sciences" element = {<LifeScienceAndPharma/>}/>
-    <Route path="//industries/consumer-electronics" element = {<ConsumerElectronics/>}/>
+    <Route path="/industries/aerospace-defense" element = {<AerospaceDefence/>}/>
+    <Route path="/industries/banking" element = {<Banking/>}/>
+    <Route path="/industries/communications" element = {<Communications/>}/>
+    <Route path="/industries/cpg" element = {<ConsumerPackageGoods/>}/>
+    <Route path="/industries/education" element = {<Education/>}/>
+    <Route path="/industries/manufacturing" element = {<IndustriesAndProcess/>}/>
+    <Route path="/industries/insurance" element = {<Insurance/>}/>
+    <Route path="/industries/life-sciences" element = {<LifeScienceAndPharma/>}/>
+    <Route path="/industries/consumer-electronics" element = {<ConsumerElectronics/>}/>
     <Route path="//industries/engineering-construction" element = {<EngineeringConstruction/>}/>
-    <Route path="//industries/engineering-construction" element = {<EngineeringConstruction/>}/>
-    <Route path="//industries/media" element = {<MediaandInfo/>}/>
-    <Route path="//industries/natural-resources" element={<NaturalResources/>}/>
-    <Route path="//industries/oil-gas" element ={<Oilandgas/>}/>
-    <Route path="//industries/software" element={<PlatformandSoftware/>}/>
-    <Route path="//industries/professional-services" element={<Professional/>}/>
-    <Route path="//industries/public-sector" element={<PublicSector/>}/>
-    <Route path="//industries/retail" element={<Retail/>}/>
-    <Route path="//industries/transportation" element={<TransportationAndServices/>}/>
-    <Route path="//industries/utilities" element={<Utilities/>}/>
-    <Route path="//industries/semiconductors" element={<Semiconductor/>}/>
-
+    <Route path="/industries/engineering-construction" element = {<EngineeringConstruction/>}/>
+    <Route path="/industries/media" element = {<MediaandInfo/>}/>
+    <Route path="/industries/natural-resources" element={<NaturalResources/>}/>
+    <Route path="/industries/oil-gas" element ={<Oilandgas/>}/>
+    <Route path="/industries/software" element={<PlatformandSoftware/>}/>
+    <Route path="/industries/professional-services" element={<Professional/>}/>
+    <Route path="/industries/public-sector" element={<PublicSector/>}/>
+    <Route path="/industries/retail" element={<Retail/>}/>
+    <Route path="/industries/transportation" element={<TransportationAndServices/>}/>
+    <Route path="/industries/utilities" element={<Utilities/>}/>
+    <Route path="/industries/semiconductors" element={<Semiconductor/>}/>
+    <Route path="/contact-us/faq" element={<Faq/>}/>
+    <Route path="/contact-us/career" element={<Career/>}/>
+    <Route path="/contact-us/clients" element={<Client/>}/>
 
 
     
