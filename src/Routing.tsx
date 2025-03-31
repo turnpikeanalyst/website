@@ -27,64 +27,66 @@ import Retail from "./pages/industries/Retail";
 import Semiconductor from "./pages/industries/Semiconductor";
 import TransportationAndServices from "./pages/industries/TransportationAndServices";
 import Utilities from "./pages/industries/Utilities";
-import Services from "./pages/Services";
 import SoftwareSupport from "./pages/SoftwareSupport";
 import TrainingCourses from "./pages/TrainingCourses";
-
-
+import MedicalDevices from "./pages/industries/Medicaldevices";
+import HealthCare from "./pages/industries/HealthCare";
+import ServicePage from "./components/ServicePage";
+import { pageData } from "./lib/pageData";
 
 function Routing() {
   return (
-
-   <div>
-    
-
-
-<Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/services" element={<Services />} />
-    <Route path="/industries/automotive" element={<Automotive/>}/>
-    <Route path="/training-courses" element={<TrainingCourses />} />
-    <Route path="/blog" element={<Blog />} />
-    <Route path="/contact-us" element={<ContactUs />} />
-    <Route path="/digital-content-services" element={<DigitalContentServices />} />
-    <Route path="/software-support" element={<SoftwareSupport />} />
-    <Route path="/industries/aerospace-defense" element = {<AerospaceDefence/>}/>
-    <Route path="/industries/banking" element = {<Banking/>}/>
-    <Route path="/industries/communications" element = {<Communications/>}/>
-    <Route path="/industries/cpg" element = {<ConsumerPackageGoods/>}/>
-    <Route path="/industries/education" element = {<Education/>}/>
-    <Route path="/industries/manufacturing" element = {<IndustriesAndProcess/>}/>
-    <Route path="/industries/insurance" element = {<Insurance/>}/>
-    <Route path="/industries/life-sciences" element = {<LifeScienceAndPharma/>}/>
-    <Route path="/industries/consumer-electronics" element = {<ConsumerElectronics/>}/>
-    <Route path="//industries/engineering-construction" element = {<EngineeringConstruction/>}/>
-    <Route path="/industries/engineering-construction" element = {<EngineeringConstruction/>}/>
-    <Route path="/industries/media" element = {<MediaandInfo/>}/>
-    <Route path="/industries/natural-resources" element={<NaturalResources/>}/>
-    <Route path="/industries/oil-gas" element ={<Oilandgas/>}/>
-    <Route path="/industries/software" element={<PlatformandSoftware/>}/>
-    <Route path="/industries/professional-services" element={<Professional/>}/>
-    <Route path="/industries/public-sector" element={<PublicSector/>}/>
-    <Route path="/industries/retail" element={<Retail/>}/>
-    <Route path="/industries/transportation" element={<TransportationAndServices/>}/>
-    <Route path="/industries/utilities" element={<Utilities/>}/>
-    <Route path="/industries/semiconductors" element={<Semiconductor/>}/>
-    <Route path="/contact-us/faq" element={<Faq/>}/>
-    <Route path="/contact-us/career" element={<Career/>}/>
-    <Route path="/contact-us/clients" element={<Client/>}/>
-
-
-    
-
-
-
-
-                                                    
-
-   </Routes>
-   </div>
-  )
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/industries/automotive" element={<Automotive />} />
+        <Route path="/training-courses" element={<TrainingCourses />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact-us" element={<ContactUs />} />
+        <Route path="/contact-us/faq" element={<Faq />} />
+        <Route path="/contact-us/career" element={<Career />} />
+        <Route path="/contact-us/clients" element={<Client />} />
+        <Route path="/digital-content-services" element={<DigitalContentServices />} />
+        <Route path="/software-support" element={<SoftwareSupport />} />
+        <Route path="/industries/aerospace-defense" element={<AerospaceDefence />} />
+        <Route path="/industries/banking" element={<Banking />} />
+        <Route path="/industries/communications" element={<Communications />} />
+        <Route path="/industries/cpg" element={<ConsumerPackageGoods />} />
+        <Route path="/industries/education" element={<Education />} />
+        <Route path="/industries/manufacturing" element={<IndustriesAndProcess />} />
+        <Route path="/industries/insurance" element={<Insurance />} />
+        <Route path="/industries/life-sciences" element={<LifeScienceAndPharma />} />
+        <Route path="/industries/consumer-electronics" element={<ConsumerElectronics />} />
+        <Route path="/industries/engineering-construction" element={<EngineeringConstruction />} />
+        <Route path="/industries/media" element={<MediaandInfo />} />
+        <Route path="/industries/natural-resources" element={<NaturalResources />} />
+        <Route path="/industries/oil-gas" element={<Oilandgas />} />
+        <Route path="/industries/software" element={<PlatformandSoftware />} />
+        <Route path="/industries/professional-services" element={<Professional />} />
+        <Route path="/industries/public-sector" element={<PublicSector />} />
+        <Route path="/industries/retail" element={<Retail />} />
+        <Route path="/industries/transportation" element={<TransportationAndServices />} />
+        <Route path="/industries/utilities" element={<Utilities />} />
+        <Route path="/industries/semiconductors" element={<Semiconductor />} />
+        <Route path="/industries/medical-devices" element={<MedicalDevices />} />
+        <Route path="/industries/healthcare" element={<HealthCare />} />
+        <Route path="/services/applications" element={<ServicePage {...pageData.applications} />} />
+        <Route path="/services/ai" element={<ServicePage {...pageData.ai} />} />
+        <Route path="/services/business-process" element={<ServicePage {...pageData.businessProcess} />} />
+        <Route path="/services/business-solutions" element={<ServicePage {...pageData.businessSolutions} />} />
+        <Route path="/services/cloud" element={<ServicePage {...pageData.cloud} />} />
+        <Route path="/services/consulting" element={<ServicePage {...pageData.consulting} />} />
+        <Route path="/services/cybersecurity" element={<ServicePage {...pageData.cybersecurity} />} />
+        <Route path="/services/data-analytics" element={<ServicePage {...pageData.dataAnalytics} />} />
+        <Route path="/services/design-experience" element={<ServicePage {...pageData.designExperience} />} />
+        <Route path="/services/digital-marketing" element={<ServicePage {...pageData.digitalMarketing} />} />
+        <Route path="/services/engineering" element={<ServicePage {...pageData.engineering} />} />
+        <Route path="/services/infrastructure" element={<ServicePage {...pageData.infrastructure} />} />
+        <Route path="/services/sustainability" element={<ServicePage {...pageData.sustainability} />} />
+        <Route path="/services/talent-cloud" element={<ServicePage {...pageData.talentCloud} />} />
+      </Routes>
+    </div>
+  );
 }
 
-export default Routing
+export default Routing;
