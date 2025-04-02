@@ -219,7 +219,7 @@ export default function Home() {
         className="min-h-[90vh] bg-cover bg-center text-white relative"
         style={{
           backgroundImage:
-            "url('https://www.turnpikeanalyst.com/wp-content/uploads/2023/05/6849678_3440660-scaled.jpg')",
+            "url('/home-background.jpg')",
         }}
       >
         <div className="absolute inset-0 bg-black bg-opacity-50" />
