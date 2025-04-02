@@ -33,6 +33,9 @@ import MedicalDevices from "./pages/industries/Medicaldevices";
 import HealthCare from "./pages/industries/HealthCare";
 import ServicePage from "./components/ServicePage";
 import { pageData } from "./lib/pageData";
+import ContentMigrationPage from "./pages/digitalContent/ContentMigrationPage";
+import DigitalContentCapture from "./pages/digitalContent/DigitalContentCapture";
+import ManagedITServices from "./pages/digitalContent/ManagedITServices";
 
 function Routing() {
   return (
@@ -84,6 +87,9 @@ function Routing() {
         <Route path="/services/infrastructure" element={<ServicePage {...pageData.infrastructure} />} />
         <Route path="/services/sustainability" element={<ServicePage {...pageData.sustainability} />} />
         <Route path="/services/talent-cloud" element={<ServicePage {...pageData.talentCloud} />} />
+        <Route path="/digital-content-services/migration" element={<ContentMigrationPage />} />
+        <Route path="/digital-content-services/capture" element={<DigitalContentCapture />} />
+        <Route path="/digital-content-services/managed-services" element={<ManagedITServices />} />
       </Routes>
     </div>
   );
