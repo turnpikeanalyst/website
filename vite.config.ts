@@ -5,10 +5,13 @@ import { visualizer } from 'rollup-plugin-visualizer'
 import { VitePWA } from 'vite-plugin-pwa'
 import viteCompression from 'vite-plugin-compression'
 
+// Fix native Rollup issues by disabling native builds
+process.env.ROLLUP_NO_NATIVE = 'true'
+
 export default defineConfig({
   plugins: [
     react(),
-    // Generate bundle analysis report
+
     visualizer({
       template: 'treemap',
       open: false,
@@ -16,7 +19,7 @@ export default defineConfig({
       brotliSize: true,
       filename: 'dist/stats.html',
     }),
-    // PWA support
+
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'robots.txt', 'apple-touch-icon.png'],
@@ -40,24 +43,26 @@ export default defineConfig({
         ],
       },
     }),
-    // Gzip compression
+
     viteCompression({
       verbose: false,
       algorithm: 'gzip',
       ext: '.gz',
     }),
-    // Brotli compression
+
     viteCompression({
       verbose: false,
       algorithm: 'brotliCompress',
       ext: '.br',
     }),
   ],
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
   },
+
   build: {
     target: 'es2015',
     outDir: 'dist',
@@ -80,18 +85,17 @@ export default defineConfig({
     },
     reportCompressedSize: false,
     chunkSizeWarningLimit: 1000,
-    // Generate source maps for easier debugging
     sourcemap: true,
   },
+
   css: {
-    // Generate source maps for CSS
     devSourcemap: true,
   },
-  // Optimize dependency pre-bundling
+
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom', 'framer-motion'],
   },
-  // Development server options
+
   server: {
     open: true,
     port: 3000,
