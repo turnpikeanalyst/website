@@ -1,6 +1,6 @@
 import logo from "@/assets/asset 0.png";
 import { ChevronDown, ChevronUp, Menu, X } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 interface NavItem {
@@ -86,9 +86,6 @@ const navigationItems3: Record<string, NavItem[]> = {
   ],
 };
 
-// Define navigationItems2 which was missing in the original code
-const navigationItems2: Record<string, NavItem[]> = {};
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -96,7 +93,6 @@ const Navbar = () => {
   const [visible, setVisible] = useState(true);
   const location = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
-  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const isHomePage = location.pathname === "/" || location.pathname === "";
 
@@ -132,21 +128,22 @@ const Navbar = () => {
     return "black";
   };
 
-  const handleDropdownHover = (section: string) => {
-    // Clear any existing timeout to prevent the dropdown from closing
-    if (dropdownTimeoutRef.current) {
-      clearTimeout(dropdownTimeoutRef.current);
-      dropdownTimeoutRef.current = null;
-    }
-    setActiveDropdown(section);
+  const toggleDropdown = (section: string) => {
+    setActiveDropdown(activeDropdown === section ? null : section);
   };
 
-  const handleDropdownLeave = () => {
-    // Add a small delay before closing the dropdown to make it easier to move to the dropdown content
-    dropdownTimeoutRef.current = setTimeout(() => {
-      setActiveDropdown(null);
-    }, 150); // 150ms delay
-  };
+  // Handle clicking outside to close dropdown
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (activeDropdown && !target.closest(".dropdown-container")) {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [activeDropdown]);
 
   const DropdownSection = ({
     section,
@@ -173,40 +170,28 @@ const Navbar = () => {
         : section.charAt(0).toUpperCase() + section.slice(1);
 
     return (
-      <div
-        className="relative group"
-        onMouseEnter={() => handleDropdownHover(section)}
-        onMouseLeave={handleDropdownLeave}
-      >
+      <div className="relative dropdown-container">
         {/* Increase the clickable area of the button */}
         <button
-          className="flex items-center gap-1 text-white hover:text-blue-400 transition-colors duration-300 py-3 px-2"
+          className="flex items-center gap-1 text-white hover:text-blue-400 transition-colors duration-300 py-3 px-4 font-abeezee text-[15px]"
           aria-expanded={activeDropdown === section}
           aria-haspopup="true"
-          style={{ fontFamily: "ABeeZee, sans-serif", fontSize: "15px" }}
-          onClick={() =>
-            activeDropdown === section
-              ? setActiveDropdown(null)
-              : handleDropdownHover(section)
-          }
+          onClick={() => toggleDropdown(section)}
         >
           <span>{displayName}</span>
-          <ChevronDown className="h-4 w-4" />
+          {activeDropdown === section ? (
+            <ChevronUp className="h-4 w-4 ml-1" />
+          ) : (
+            <ChevronDown className="h-4 w-4 ml-1" />
+          )}
         </button>
 
-        {/* Add an invisible bridge element to prevent the dropdown from closing when moving mouse from button to dropdown */}
         {activeDropdown === section && (
           <>
-            <div className="absolute left-0 w-full h-3 bg-transparent" />
             <div
-              className={`absolute left-1/2 transform -translate-x-1/2 mt-3 bg-opacity-95 text-white py-2 shadow-lg ${dropdownWidth} z-50 max-h-[80vh] overflow-y-auto`}
-              style={{
-                backgroundColor: "#1f2125",
-                maxWidth: "calc(100vw - 40px)",
-              }}
+              className={`absolute left-1/2 transform -translate-x-1/2 mt-2 bg-gray-900 bg-opacity-95 text-white py-2 shadow-lg ${dropdownWidth} z-50 max-h-[80vh] overflow-y-auto rounded-md`}
+              style={{ maxWidth: "calc(100vw - 40px)" }}
               role="menu"
-              onMouseEnter={() => handleDropdownHover(section)}
-              onMouseLeave={handleDropdownLeave}
             >
               <div className="flex">
                 {columns.map((column, columnIndex) => (
@@ -214,13 +199,11 @@ const Navbar = () => {
                     {column.map((item) => (
                       <Link
                         key={item.href}
-                        to={item.href}
-                        className="block px-4 py-3 hover:bg-gray-900 hover:text-blue-400 transition-colors duration-200 rounded"
-                        onClick={() => setActiveDropdown(null)}
-                        style={{
-                          fontFamily: "ABeeZee, sans-serif",
-                          fontSize: "13px",
+                        className="block px-4 py-3 hover:bg-gray-800 hover:text-blue-400 transition-colors duration-200 rounded font-abeezee text-[14px]"
+                        onClick={() => {
+                          setActiveDropdown(null);
                         }}
+                        to={item.href}
                       >
                         {item.label}
                       </Link>
@@ -258,9 +241,8 @@ const Navbar = () => {
       <div className="py-2">
         <button
           onClick={() => setActiveDropdown(isActive ? null : section)}
-          className="flex items-center justify-between w-full text-white py-3 px-2"
+          className="flex items-center justify-between w-full text-white py-3 px-2 font-abeezee text-[14px]"
           aria-expanded={isActive}
-          style={{ fontFamily: "ABeeZee, sans-serif", fontSize: "14px" }}
         >
           <span>{displayName}</span>
           {isActive ? (
@@ -283,12 +265,8 @@ const Navbar = () => {
                     <Link
                       key={item.href}
                       to={item.href}
-                      className="block text-white hover:text-blue-400 py-3 px-2 rounded"
+                      className="block text-white hover:text-blue-400 py-3 px-2 rounded font-abeezee text-[13px]"
                       onClick={toggleMenu}
-                      style={{
-                        fontFamily: "ABeeZee, sans-serif",
-                        fontSize: "13px",
-                      }}
                     >
                       {item.label}
                     </Link>
@@ -304,10 +282,9 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 ${
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         visible ? "translate-y-0" : "-translate-y-full"
-      }`}
-      style={{ backgroundColor: getBackgroundColor() }}
+      } ${isHomePage && !isScrolled ? 'bg-transparent' : 'bg-black'}`}
     >
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
@@ -323,8 +300,7 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center space-x-4 ml-10">
             <Link
               to="/"
-              className="text-blue-400 hover:text-white transition-colors duration-300 py-3 px-2"
-              style={{ fontFamily: "ABeeZee, sans-serif", fontSize: "15px" }}
+              className="text-blue-400 hover:text-white transition-colors duration-300 py-3 px-4 font-abeezee text-[15px]"
             >
               Home
             </Link>
@@ -335,16 +311,14 @@ const Navbar = () => {
 
             <Link
               to="/software-support"
-              className="text-white hover:text-blue-400 transition-colors duration-300 py-3 px-2"
-              style={{ fontFamily: "ABeeZee, sans-serif", fontSize: "15px" }}
+              className="text-white hover:text-blue-400 transition-colors duration-300 py-3 px-4 font-abeezee text-[15px]"
             >
               Software Support
             </Link>
 
             <Link
               to="/blog"
-              className="text-white hover:text-blue-400 transition-colors duration-300 py-3 px-2"
-              style={{ fontFamily: "ABeeZee, sans-serif", fontSize: "15px" }}
+              className="text-white hover:text-blue-400 transition-colors duration-300 py-3 px-4 font-abeezee text-[15px]"
             >
               Blog
             </Link>
@@ -366,13 +340,12 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="fixed inset-0 w-full h-full bg-black z-40 lg:hidden overflow-y-auto pt-20">
+          <div className="fixed inset-0 w-full h-full bg-black bg-opacity-95 z-40 lg:hidden overflow-y-auto pt-20">
             <div className="flex flex-col px-6 pb-8 space-y-4">
               <Link
                 to="/"
-                className="text-blue-400 py-3 px-2"
+                className="text-blue-400 py-3 px-2 font-abeezee text-[16px]"
                 onClick={toggleMenu}
-                style={{ fontFamily: "ABeeZee, sans-serif", fontSize: "14px" }}
               >
                 Home
               </Link>
@@ -387,26 +360,16 @@ const Navbar = () => {
 
               <Link
                 to="/software-support"
-                className="text-white py-3 px-2 hover:text-blue-400"
+                className="text-white py-3 px-4 font-abeezee text-[15px]"
                 onClick={toggleMenu}
-                style={{ fontFamily: "ABeeZee, sans-serif", fontSize: "14px" }}
               >
                 Software Support
               </Link>
 
-              {Object.entries(navigationItems2).map(([section, items]) => (
-                <MobileDropdownSection
-                  key={section}
-                  section={section}
-                  items={items}
-                />
-              ))}
-
               <Link
                 to="/blog"
-                className="text-white py-3 px-2 hover:text-blue-400"
+                className="text-white py-3 px-4 font-abeezee text-[15px]"
                 onClick={toggleMenu}
-                style={{ fontFamily: "ABeeZee, sans-serif", fontSize: "14px" }}
               >
                 Blog
               </Link>

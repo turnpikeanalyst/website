@@ -55,6 +55,5 @@ function ContactForm() {
       </div>
     </div>
   );
-}
+}export default ContactForm;
 
-export default ContactForm;

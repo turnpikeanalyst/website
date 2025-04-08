@@ -1,18 +1,15 @@
-import './App.css'
-import Footer from './components/Footer'
-// import Navbar from './components/Navbar'
-import Navbar from './components/Navbar'
-import Routing from './Routing'
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Routing from './Routing';
 
 function App() {
-
   return (
-    <div>
-     <Navbar/>
-     <Routing />
-     <Footer/>
-    </div>
-  )
+    <>
+      <Navbar />
+      <Routing />
+      <Footer />
+    </>
+  );
 }
 
-export default App
+export default App;

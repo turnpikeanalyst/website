@@ -50,7 +50,32 @@ export default {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			}
-  		}
+  		},
+  		fontFamily: {
+  			abeezee: ['"ABeeZee"', 'sans-serif'],
+  		},
+  		backgroundImage: {
+  			'hero-main': "url('/terence-burke-ianPiLGoZBM-unsplash.jpg')",
+  			'banking': "url('/wallet-gbe210c72b_640.jpg')",
+  			'communication': "url('/skyscrapers-ge9fc59c2c_640.jpg')",
+  			'electronics': "url('/sahand-babali-owjrvbyXYyc-unsplash.jpg')",
+  			'consumer-goods': "url('/fikri-rasyid-ezeC8-clZSs-unsplash (1).jpg')",
+  			'education': "url('/alexandre-van-thuan-mr9FouttLGY-unsplash.jpg')",
+  			'construction': "url('/public/josue-isai-ramos-figueroa-qvBYnMuNJ9A-unsplash (1).jpg')",
+  			'industries-process': "url('/public/mech-mind-Xl_l8laGNs0-unsplash.jpg')",
+  			'insurance': "url('/public/real-estate-g3201fb00d_640.jpg')",
+  			'life-science': "url('/public/female-scientist-typing-her-computer-data-from-last-scientific-tests-chemistry-lab.jpg')",
+  			'media-info': "url('/public/corporate-management-strategy-solution-branding-concept.jpg')",
+  			'natural-resources': "url('/public/smart-agriculture-iot-with-hand-planting-tree-background.jpg')",
+  			'oil-gas': "url('/public/closeup-view-cylindrical-grinder-industrial-concept.jpg')",
+  			'products-platforms': "url('/public/standard-quality-control-concept-m-1.jpg')",
+  			'professional-services': "url('/public/christina-wocintechchat-com-faEfWCdOKIg-unsplash.jpg')",
+  			'public-sector': "url('/public/business-people-board-room-meeting.jpg')",
+  			'retail': "url('/public/family-shopping-with-face-mask.jpg')",
+  			'semiconductor': "url('/public/closeup-electronic-circuit-board-with-cpu-microchip-electronic-components-background.jpg')",
+  			'transportation': "url('/public//full-shot-man-walking-by-trucks-fleet.jpg')",
+  			'utilities': "url('/public/sun-setting-silhouette-electricity-pylons.jpg')",
+  		},
   	}
   },
   plugins: [require("tailwindcss-animate")],

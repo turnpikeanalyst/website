@@ -1,104 +1,168 @@
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
-
-
-// Import placeholder image
 import logo from "@/assets/asset 0.png"
+import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react"
+import { Link } from "react-router-dom"
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white pt-12 relative">
-      <div className="container mx-auto px-4 grid gap-8 md:grid-cols-3">
-        {/* Logo Section */}
-        <div className="flex flex-col items-start">
-          <img 
-            src={logo}
-            alt="TurnPikeAnalyst Logo"
-            width={150}
-            height={80}
-            className="mb-4"
-          />
-          <p className="text-gray-300">TurnPikeAnalyst, The future of IT.</p>
-        </div>
+    <footer className="bg-gradient-to-b from-black to-gray-900 text-white pt-16 pb-8 relative">
+      <div className="container mx-auto px-4">
+        {/* Top Section with Logo and Newsletter */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 mb-16">
+          {/* Logo and Company Info */}
+          <div className="space-y-6">
+            <Link to="/" className="inline-block">
+              <img
+                src={logo}
+                alt="TurnPikeAnalyst Logo"
+                width={150}
+                height={80}
+                className="mb-5 transition-transform hover:scale-105 duration-300"
+              />
+            </Link>
+            <p className="text-gray-300 text-sm leading-relaxed font-abeezee">
+              TurnPikeAnalyst is a global leader in ECM, ETL, and ESB solutions, helping businesses worldwide streamline operations and maximize productivity.
+            </p>
+            <div className="flex space-x-5 pt-2">
+              <a href="#" aria-label="Facebook" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 hover:scale-110">
+                <Facebook size={20} />
+                <span className="sr-only">Facebook</span>
+              </a>
+              <a href="#" aria-label="Twitter" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 hover:scale-110">
+                <Twitter size={20} />
+                <span className="sr-only">Twitter</span>
+              </a>
+              <a href="#" aria-label="Instagram" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 hover:scale-110">
+                <Instagram size={20} />
+                <span className="sr-only">Instagram</span>
+              </a>
+              <a href="#" aria-label="LinkedIn" className="text-gray-400 hover:text-blue-400 transition-colors duration-300 hover:scale-110">
+                <Linkedin size={20} />
+                <span className="sr-only">LinkedIn</span>
+              </a>
+            </div>
+          </div>
 
-        {/* Contact Info Section */}
-        <div className="space-y-4">
-          <h2 className="text-xl font-semibold mb-6">Contact Info</h2>
-          <p className="text-gray-300">
-            TurnPikeAnalyst, The future of IT. Please reach for software development, support and Training.
-          </p>
-          <div className="space-y-3">
-            <div className="flex items-start gap-3">
-              <div className="p-2 bg-blue-500/10 rounded-lg mt-1">
-                <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
+          {/* Quick Links */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold mb-5 relative inline-block font-abeezee">
+              Quick Links
+              <span className="absolute bottom-0 left-0 w-2/3 h-0.5 bg-blue-500"></span>
+            </h3>
+            <ul className="space-y-3 font-abeezee">
+              <li>
+                <Link to="/services/applications" className="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-sm flex items-center group">
+                  <span className="mr-2 text-blue-400 group-hover:translate-x-1 transition-transform">›</span> Applications
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/ai" className="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-sm flex items-center group">
+                  <span className="mr-2 text-blue-400 group-hover:translate-x-1 transition-transform">›</span> AI & Augmented Intelligence
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/cybersecurity" className="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-sm flex items-center group">
+                  <span className="mr-2 text-blue-400 group-hover:translate-x-1 transition-transform">›</span> Cybersecurity
+                </Link>
+              </li>
+              <li>
+                <Link to="/services/cloud" className="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-sm flex items-center group">
+                  <span className="mr-2 text-blue-400 group-hover:translate-x-1 transition-transform">›</span> Cloud Solutions
+                </Link>
+              </li>
+              <li>
+                <Link to="/blog" className="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-sm flex items-center group">
+                  <span className="mr-2 text-blue-400 group-hover:translate-x-1 transition-transform">›</span> Blog
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact-us" className="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-sm flex items-center group">
+                  <span className="mr-2 text-blue-400 group-hover:translate-x-1 transition-transform">›</span> Contact Us
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold mb-5 relative inline-block font-abeezee">
+              Contact Info
+              <span className="absolute bottom-0 left-0 w-2/3 h-0.5 bg-blue-500"></span>
+            </h3>
+            <div className="space-y-5 font-abeezee">
+              <div className="flex items-start group">
+                <div className="flex-shrink-0 mt-1">
+                  <MapPin className="h-5 w-5 text-blue-400 group-hover:scale-110 transition-transform" />
+                </div>
+                <div className="ml-3">
+                  <p className="font-medium text-sm">Hamilton Business Center (328)</p>
+                  <p className="text-gray-400 text-sm">1101 Hamilton St, Allentown, PA 18101 USA</p>
+                </div>
               </div>
-              <div>
-                <p className="font-medium">Hamilton Business Center (328)</p>
-                <p className="text-gray-400">1101 Hamilton St, Allentown, PA 18101 USA</p>
+              <div className="flex items-center group">
+                <div className="flex-shrink-0">
+                  <Phone className="h-5 w-5 text-blue-400 group-hover:scale-110 transition-transform" />
+                </div>
+                <div className="ml-3">
+                  <p className="text-gray-400 text-sm">Mobile:</p>
+                  <a href="tel:+14847479294" className="text-sm hover:text-blue-400 transition-colors font-medium">+1 484.747.9294</a>
+                </div>
               </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="p-2 bg-blue-500/10 rounded-lg">
-                <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-gray-400">Mobile:</p>
-                <p>+1 484.747.9294</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="p-2 bg-blue-500/10 rounded-lg">
-                <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <div>
-                <p className="text-gray-400">Email:</p>
-                <button onClick={()=>{
-                    window.location.href = "mailto:contact@turnpikeanalyst.com";
-                }}>contact@turnpikeanalyst.com</button>
+              <div className="flex items-center group">
+                <div className="flex-shrink-0">
+                  <Mail className="h-5 w-5 text-blue-400 group-hover:scale-110 transition-transform" />
+                </div>
+                <div className="ml-3">
+                  <p className="text-gray-400 text-sm">Email:</p>
+                  <a
+                    href="mailto:contact@turnpikeanalyst.com"
+                    className="text-sm hover:text-blue-400 transition-colors font-medium">
+                    contact@turnpikeanalyst.com
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Newsletter Section */}
-        <div>
-          <h2 className="text-xl font-semibold mb-6">Newsletter</h2>
-          <p className="text-gray-300 mb-6">
-            Get all latest content delivered to your email a few times a month. Updates and news about all categories will send to you.
-          </p>
-          <div className="space-y-4">
-            <div className="flex gap-2">
-              <Input 
-                type="email" 
-                placeholder="Your Email" 
-                className="bg-white/10 border-gray-700"
-              />
-              <Button className="bg-blue-500 hover:bg-blue-600">
-                GO
-              </Button>
-            </div>
-            <div className="flex items-center gap-2">
-              <Checkbox id="terms" />
-              <label htmlFor="terms" className="text-sm text-gray-300">
-                Accept Our Terms
-              </label>
+          {/* Newsletter */}
+          <div className="space-y-6">
+            <h3 className="text-lg font-semibold mb-5 relative inline-block font-abeezee">
+              Newsletter
+              <span className="absolute bottom-0 left-0 w-2/3 h-0.5 bg-blue-500"></span>
+            </h3>
+            <p className="text-gray-300 text-sm font-abeezee">
+              Subscribe to our newsletter for the latest updates, industry insights, and exclusive offers.
+            </p>
+            <div className="space-y-4 pt-1">
+              <div className="flex items-stretch shadow-md">
+                <Input
+                  type="email"
+                  placeholder="Your Email"
+                  className="bg-gray-800/50 border-gray-700 rounded-r-none focus:ring-blue-500 focus:border-blue-500 h-11"
+                />
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-l-none px-4 font-abeezee">
+                  Subscribe
+                </Button>
+              </div>
+              <div className="flex items-center gap-3">
+                <Checkbox id="terms" className="text-blue-500 focus:ring-blue-500 h-4 w-4" />
+                <label htmlFor="terms" className="text-xs text-gray-300 font-abeezee">
+                  I agree to receive email newsletters
+                </label>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Copyright */} 
-      <div className="border-t border-gray-800 py-5">
+      {/* Copyright */}
+      <div className="border-t border-gray-800 py-6">
         <div className="container mx-auto px-4">
-          <p className="text-center text-gray-500">Copyright 2025 - TurnPikeAnalyst</p>
+          <div className="flex flex-col md:flex-row justify-center items-center">
+            <p className="text-gray-400 text-sm font-abeezee">© 2025 TurnPikeAnalyst. All rights reserved.</p>
+          </div>
         </div>
       </div>
     </footer>
