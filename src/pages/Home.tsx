@@ -1,5 +1,5 @@
 import asset10 from "@/assets/asset 10.png";
-import asset102 from "@/assets/asset 102.jpeg";
+// import asset102 from "@/assets/asset 102.jpeg";
 import asset11 from "@/assets/asset 11.png";
 import asset12 from "@/assets/asset 12.png";
 import asset13 from "@/assets/asset 13.png";

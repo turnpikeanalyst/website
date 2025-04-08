@@ -123,10 +123,10 @@ const Navbar = () => {
     );
   };
 
-  const getBackgroundColor = () => {
-    if (isHomePage && !isScrolled) return "transparent";
-    return "black";
-  };
+  // const getBackgroundColor = () => {
+  //   if (isHomePage && !isScrolled) return "transparent";
+  //   return "black";
+  // };
 
   const toggleDropdown = (section: string) => {
     setActiveDropdown(activeDropdown === section ? null : section);
